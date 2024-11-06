@@ -1,12 +1,10 @@
 package org.example.jurassic.model.entidades;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 
+@Entity
 public class Dinosaurio implements Serializable {
 
     //id autogenerado
@@ -26,4 +24,37 @@ public class Dinosaurio implements Serializable {
     @Column(nullable = false)
     private String tipo;
 
+    //definimos getter y setter
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getAlimentacion() {
+        return alimentacion;
+    }
+
+    public void setAlimentacion(String alimentacion) {
+        this.alimentacion = alimentacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 }
