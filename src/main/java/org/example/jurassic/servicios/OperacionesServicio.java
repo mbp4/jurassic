@@ -1,7 +1,9 @@
 package org.example.jurassic.servicios;
 
 import org.example.jurassic.model.dao.DinosaurioDao;
+import org.example.jurassic.model.dao.IslaDao;
 import org.example.jurassic.model.entidades.Dinosaurio;
+import org.example.jurassic.model.entidades.Isla;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,24 +16,15 @@ public class OperacionesServicio {
     @Autowired
     private DinosaurioDao dinosaurioDao;
 
-    private final List<String> alimentacion = Arrays.asList("HERVIBORO", "OMNIVORO", "PISCIVORO", "CARNIVORO");
+    @Autowired
+    private IslaDao islaDao;
+
+    //private final List<String> alimentacion = Arrays.asList("HERVIBORO", "OMNIVORO", "PISCIVORO", "CARNIVORO");
 
 
-    public List<Dinosaurio> listadoDinosaurios() {
-        List<Dinosaurio> listado = dinosaurioDao.findAll();
+    public List<Isla> listadoDinosaurios() {
+        List<Isla> listado = islaDao.findAll();
         return listado;
     }
 
-    public int guardar(Dinosaurio dinosaurio) {
-        int result = 0;
-        if (!alimentacion.contains(dinosaurio.getAlimentacion().toUpperCase())){
-            result = 1;
-        }
-        if (result == 0) {
-            dinosaurioDao.save(dinosaurio);
-        }
-
-        return result;
-        //poner mas condiciones
-    }
 }

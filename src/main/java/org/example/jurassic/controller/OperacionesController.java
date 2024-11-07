@@ -22,27 +22,10 @@ public class OperacionesController {
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(required = false, defaultValue = "0") String error){
-        model.addAttribute("dinosaurio", servicio.listadoDinosaurios());
+        model.addAttribute("isla", servicio.listadoDinosaurios());
         model.addAttribute("error", error);
         return "listado";
-        //sacar el listado de islas
-    }
-
-    @GetMapping("/formulario")
-    public String formulario(Model model){
-        model.addAttribute("dinosaurio", new Dinosaurio());
-        return "formulario";
-        //cuando se haya creado un nuevo dinosaurio que salte el formulario
-    }
-
-    @PostMapping("/guardar")
-    public String guardar(@ModelAttribute Dinosaurio dinosaurio){
-        int result = servicio.guardar(dinosaurio);
-        if (result == 0){
-            return "redirect:/principal/list";
-        }else {
-            return "redirect:/principal/list?error=" + result;
-        }
+        //sacar el listado de islas dividido
     }
 
     @GetMapping("/salir")
