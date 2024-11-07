@@ -1,40 +1,31 @@
 package org.example.jurassic.model.entidades;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+import javax.persistence.Entity;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-public class Dinosaurio implements Serializable {
+public class Isla implements Serializable {
 
-    //id autogenerado
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    //alimentacion del dinosaurio: herviboro, carniboro, etc
-    @Column(nullable = false)
-    private String alimentacion;
-
-    //nombre del dinosaurio
+    //nombre de la isla
     @Column(nullable = false)
     private String nombre;
 
-    //tipo o familia a la que pertenece el dinosaurio: T-Rex, Diplodocus
+    //carnivoro, herviboro, etc
     @Column(nullable = false)
     private String tipo;
 
     @Column(nullable = false)
-    private String lugar;
-
-    public String getLugar() {
-        return lugar;
-    }
-
-    public void setLugar(String lugar) {
-        this.lugar = lugar;
-    }
-//definimos getter y setter
+    private List<Dinosaurio> dinosaurios;
 
     public long getId() {
         return id;
@@ -42,14 +33,6 @@ public class Dinosaurio implements Serializable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getAlimentacion() {
-        return alimentacion;
-    }
-
-    public void setAlimentacion(String alimentacion) {
-        this.alimentacion = alimentacion;
     }
 
     public String getNombre() {
@@ -66,5 +49,13 @@ public class Dinosaurio implements Serializable {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public List<Dinosaurio> getDinosaurios() {
+        return dinosaurios;
+    }
+
+    public void setDinosaurios(List<Dinosaurio> dinosaurios) {
+        this.dinosaurios = dinosaurios;
     }
 }

@@ -25,12 +25,14 @@ public class OperacionesController {
         model.addAttribute("dinosaurio", servicio.listadoDinosaurios());
         model.addAttribute("error", error);
         return "listado";
+        //sacar el listado de islas
     }
 
     @GetMapping("/formulario")
     public String formulario(Model model){
         model.addAttribute("dinosaurio", new Dinosaurio());
         return "formulario";
+        //cuando se haya creado un nuevo dinosaurio que salte el formulario
     }
 
     @PostMapping("/guardar")
