@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:c="https://jakarta.ee/xml/ns/jakartaee">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Dinosaurios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Lista de Islas</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Alimentación</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="dino" items="${dinosaurio}">
+        <tr>
+            <td>${dino.nombre}</td>
+            <td>${dino.tipo}</td>
+            <td>${dino.alimentacion}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
+<div>
+    <a href="/principal/salir">Salir</a>
+</div>
+</body>
+</html>
