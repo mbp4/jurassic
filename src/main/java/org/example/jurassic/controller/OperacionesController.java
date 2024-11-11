@@ -20,7 +20,7 @@ public class OperacionesController {
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(required = false, defaultValue = "0") String error){
-        model.addAttribute("isla", servicio.listadoIsla());
+        model.addAttribute("dinosaurio", servicio.listadoDinosaurios());
         model.addAttribute("error", error);
         return "listado";
         //sacar el listado de islas dividido
