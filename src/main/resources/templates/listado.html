@@ -14,22 +14,25 @@
     <tr>
         <th>Nombre</th>
         <th>Tipo</th>
-        <th>Alimentación</th>
+        <th>Listado</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="dino" items="${dinosaurio}">
+    <c:forEach var="isla" items="${isla}">
         <tr>
-            <td>${dino.nombre}</td>
-            <td>${dino.tipo}</td>
-            <td>${dino.alimentacion}</td>
+            <td>${isla.nombre}</td>
+            <td>${isla.tipo}</td>
+            <td>${isla.listado}</td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 
 <div>
-    <a href="/principal/salir">Salir</a>
+    <a href="/principal/salir">Salir del parque</a>
+    <a href="/principal/nacer">Gestionar crias</a>
+    <a href="/principal/terminar">Terminar día</a>
+
 </div>
 </body>
 </html>

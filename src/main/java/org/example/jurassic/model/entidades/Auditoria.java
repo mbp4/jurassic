@@ -1,11 +1,7 @@
 package org.example.jurassic.model.entidades;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
-import javax.persistence.Entity;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -15,6 +11,9 @@ public class Auditoria implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false)
+    private String usuario;
 
     //fecha y hora en la que se ha producido la accion
     @Column(nullable = false)
@@ -47,4 +46,13 @@ public class Auditoria implements Serializable {
     public void setAccion(String accion) {
         this.accion = accion;
     }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
 }
