@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Dinosaurio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container mt-5">
+    <h1>Añadir Dinosaurio</h1>
+    <form th:action="@{/principal/guardar}" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre del Dinosaurio:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required />
+        </div>
 
+        <div class="form-group">
+            <label for="tipo">Tipo del Dinosaurio:</label>
+            <input type="text" id="tipo" name="tipo" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="alimentacion">Alimentación:</label>
+            <select id="alimentacion" name="alimentacion" class="form-control" required>
+                <option value="Herbívoro">Herbívoro</option>
+                <option value="Carnívoro">Carnívoro</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Añadir Dinosaurio</button>
+    </form>
+
+    <a href="/principal/list" class="btn btn-secondary mt-3">Volver a la Lista de Islas</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

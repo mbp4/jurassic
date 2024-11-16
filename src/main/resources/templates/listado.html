@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:c="https://jakarta.ee/xml/ns/jakartaee">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Dinosaurios</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Gestión de Dinosaurios</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<h1>Lista de Islas</h1>
+<div class="container mt-5">
+    <h1>Gestión de Dinosaurios</h1>
+    <div class="row mb-3">
+        <div class="col-12">
+            <a href="/crianza/list" class="btn btn-primary">Crianza</a>
+            <a href="/principal/nacer" class="btn btn-primary">Crianza</a>
+            <a href="/principal/terminar" class="btn btn-warning">Terminar Día</a>
+            <a href="/principal/salir" class="btn btn-danger">Cerrar Sesión</a>
+        </div>
+    </div>
 
-<table>
-    <thead>
-    <tr>
-        <th>Nombre</th>
-        <th>Tipo</th>
-        <th>Listado</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach var="isla" items="${isla}">
-        <tr>
-            <td>${isla.nombre}</td>
-            <td>${isla.tipo}</td>
-            <td>${isla.listado}</td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+    <div class="row">
+        <div class="col-12">
+            <h3>Islas disponibles</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id de la Isla</th>
+                    <th>Nombre de Isla</th>
+                </tr>
+                </thead>
+                <tbody>
 
-<div>
-    <a href="/principal/salir">Salir del parque</a>
-    <a href="/principal/nacer">Gestionar crias</a>
-    <a href="/principal/terminar">Terminar día</a>
+                <tr th:each="isla : ${isla}">
+                    <td th:text="${isla.id}"></td>
+                    <td th:text="${isla.nombre}"></td>
+                </tr>
+                </tbody>
+            </table>
 
+            <div th:if="${error}">
+                <div class="alert alert-danger" role="alert">
+                    Error: <span th:text="${error}"></span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

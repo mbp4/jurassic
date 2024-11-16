@@ -34,7 +34,6 @@ public class Dinosaurio implements Serializable {
     public void setLugar(String lugar) {
         this.lugar = lugar;
     }
-//definimos getter y setter
 
     public long getId() {
         return id;

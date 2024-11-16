@@ -37,7 +37,7 @@ public class OperacionesController {
     public String guardar(@ModelAttribute Dinosaurio dinosaurio){
         int result = servicio.guardarDinosaurio(dinosaurio);
         if (result == 0){
-            return "redirect:/principal/list";
+            return "redirect:/crianza/list";
         }else {
             return "redirect:/principal/list?error=" + result;
         }
@@ -54,7 +54,7 @@ public class OperacionesController {
 
     @GetMapping("/terminar")
     public String terminar(){
-        return "redirect:/principal/auditoria";
+        return "redirect:/auditoria/listar";
     }
 
     @GetMapping("/volver")
