@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Auditoría</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Auditorías</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
-
+<div class="container mt-5">
+    <h1 class="text-center">Registro de Auditorías</h1>
+    <table class="table table-striped mt-4">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Acción</th>
+            <th>Fecha</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="auditoria : ${auditorias}">
+            <td th:text="${auditoria.id}"></td>
+            <td th:text="${auditoria.usuario}"></td>
+            <td th:text="${auditoria.accion}"></td>
+            <td th:text="${#dates.format(auditoria.fecha, 'dd/MM/yyyy HH:mm')}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/principal/list" class="btn btn-secondary">Volver</a>
+</div>
 </body>
 </html>
