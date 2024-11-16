@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Auditoría</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Auditorías</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container mt-5">
+    <h1>Listado de Auditorías</h1>
+    <div class="row mb-3">
+        <div class="col-12">
+            <a href="/auditoria/volver" class="btn btn-primary">Volver a Gestión Principal</a>
+        </div>
+    </div>
 
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Fecha</th>
+                    <th>Acción</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="auditoria : ${auditorias}">
+                    <td th:text="${auditoria.id}"></td>
+                    <td th:text="${auditoria.usuario}"></td>
+                    <td th:text="${#dates.format(auditoria.fecha, 'dd/MM/yyyy HH:mm:ss')}"></td>
+                    <td th:text="${auditoria.accion}"></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
