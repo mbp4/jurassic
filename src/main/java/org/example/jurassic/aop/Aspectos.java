@@ -42,7 +42,7 @@ public class Aspectos {
         auditoriaDao.save(auditoria);
     }
 
-    @Around("execution(* org.example.jurassic.controller.OperacionesController.nuevo(..)) || execution(* org.example.jurassic.controller.AuditoriaController.list(..)) || execution(* org.example.jurassic.controller.OperacionesController.terminar(..))")
+    @Around("execution(* org.example.jurassic.controller.OperacionesController.nuevo(..)) || execution(* org.example.jurassic.controller.AuditoriaController.list(..)) || execution(* org.example.jurassic.controller.OperacionesController.terminar(..)) || execution(* org.example.jurassic.controller.CrianzaController.listadoDinosaurios())")
     public Object checkearPermiso(ProceedingJoinPoint joinPoint) throws Throwable {
         String rolUsuario = seguridadServicio.getRolUsuarioActual();
         if (rolUsuario.equals("ROLE_ADMIN")) {

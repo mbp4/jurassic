@@ -7,3 +7,9 @@ select i1_0.id,i1_0.nombre,i1_0.tipo from isla i1_0 [42104-224]
 2024-11-16 18:56:14.854247+01:00 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ISLA" not found (this database is empty); SQL statement:
 select i1_0.id,i1_0.nombre,i1_0.tipo from isla i1_0 [42104-224]
+2024-11-16 18:59:31.894843+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ISLA" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.nombre,i1_0.tipo from isla i1_0 [42104-224]
+2024-11-16 19:00:30.213267+01:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ISLA" not found (this database is empty); SQL statement:
+select i1_0.id,i1_0.nombre,i1_0.tipo from isla i1_0 [42104-224]
