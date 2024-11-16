@@ -91,30 +91,6 @@ public class OperacionesServicio {
         dinosaurioDao.saveAll(Arrays.asList(dino1, dino2, dino3, dino4));
     }
 
-    public void asignar(Dinosaurio dinosaurio){
-        List<Isla> islasGuardadas = islaDao.findAll();
-
-        Isla islaDestino = null;
-
-        for (Isla isla : islasGuardadas) {
-            if ("Herbívoro".equalsIgnoreCase(dinosaurio.getAlimentacion()) && "Herbívoro".equalsIgnoreCase(isla.getTipo())) {
-                islaDestino = isla;
-                break;
-            } else if ("Carnívoro".equalsIgnoreCase(dinosaurio.getAlimentacion()) && "Carnívoro".equalsIgnoreCase(isla.getTipo())) {
-                islaDestino = isla;
-                break;
-            }
-        }
-
-        if (islaDestino != null) {
-            dinosaurio.setLugar(islaDestino.getNombre());
-            islaDestino.getListado().add(dinosaurio);
-            islaDao.save(islaDestino);
-            dinosaurioDao.save(dinosaurio);
-        } else {
-            throw new RuntimeException("No se encontró una isla adecuada para el dinosaurio");
-        }
-    }
 
     public int guardarDinosaurio(Dinosaurio dinosaurio) {
         int result = 0;

@@ -27,15 +27,17 @@
                 </tr>
                 </thead>
                 <tbody>
-                <!-- Iteración para mostrar cada registro de auditoría -->
                 <tr th:each="auditoria : ${auditorias}">
                     <td th:text="${auditoria.id}"></td>
                     <td th:text="${auditoria.usuario}"></td>
-                    <!-- Formateo de fecha (asegúrate de que auditoria.fecha sea compatible) -->
                     <td th:text="${#dates.format(auditoria.fecha, 'dd/MM/yyyy HH:mm:ss')}"></td>
                     <td th:text="${auditoria.accion}"></td>
                 </tr>
+                <tr th:if="${#lists.isEmpty(auditorias)}">
+                    <td colspan="4">No hay auditorías disponibles.</td>
+                </tr>
                 </tbody>
+
             </table>
         </div>
     </div>

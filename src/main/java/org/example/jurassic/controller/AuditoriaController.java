@@ -20,9 +20,11 @@ public class AuditoriaController {
     @GetMapping("/listar")
     public String list(Model model) {
         List<Auditoria> auditorias = auditoriaDao.findAll();
+        System.out.println(auditorias);  // Verifica que las auditorías no están vacías
         model.addAttribute("auditorias", auditorias);
         return "auditoria";
     }
+
 
     @GetMapping("/volver")
     public String volver(){
