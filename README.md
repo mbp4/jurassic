@@ -39,15 +39,7 @@ Este proyecto es una aplicación desarrollada con Spring Boot y WebFlux, diseña
 - **AOP (Programación Orientada a Aspectos)**: Registra acciones relevantes en la base de datos, como la creación o fallos al intentar guardar un dinosaurio.
 - **Historial de eventos**: Muestra los registros en una vista lista mediante Thymeleaf.
 - **Limpieza de auditorías**: Posibilidad de borrar registros al finalizar su revisión.
-
-### 5. Sensores Reactivos
-- **MovimientoSensorService**:
- - Procesa datos en paralelo con `Flux`.
- - Maneja técnicas de backpressure para evitar sobrecarga de datos.
-- **Otros Sensores**:
- - **SensorCardiaco**: Evalúa la salud cardíaca de los dinosaurios.
- - **SensorTemperatura**: Verifica la temperatura ambiental ideal por especie.
-
+  
 ---
 
 ## Estructura del Proyecto
@@ -57,7 +49,6 @@ Este proyecto es una aplicación desarrollada con Spring Boot y WebFlux, diseña
    - `MainController`: Redirige al listado principal.
    - `OperacionesController`: Gestiona dinosaurios y acciones como agregar, listar o finalizar el día.
    - `AuditoriaController`: Controlador para visualizar auditorías.
-   - `CrianzaController`: Gestiona la asignación de islas a dinosaurios en crianza.
 
 2. **`model.entidades`**: Define las entidades del modelo.
    - `Dinosaurio`: Representa a los dinosaurios con atributos como tipo, alimentación y ubicación.
@@ -88,7 +79,6 @@ Este proyecto es una aplicación desarrollada con Spring Boot y WebFlux, diseña
 - **`prohibido.html`**: Restringe el acceso a los usuarios que no tengan permiso.
 - **`auditoria.html`**: Muestra una plantilla con los registros de auditoría.
 - **`nacer.html`**: Interfaz para agregar nuevos dinosaurios.
-- **`crianza.html`**: Permite asginar islas a los dinosaurios en crianza.
 
 ### Tecnologías clave
 - **Spring Boot**: Framework principal.
