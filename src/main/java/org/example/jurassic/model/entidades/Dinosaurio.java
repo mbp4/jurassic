@@ -27,9 +27,6 @@ public class Dinosaurio implements Serializable {
     @Column(nullable = false)
     private String lugar;
 
-    @Column(nullable = false)
-    private int heartRate;
-
     public String getLugar() {
         return lugar;
     }
@@ -68,14 +65,5 @@ public class Dinosaurio implements Serializable {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-
-    public int getHeartRate() {
-        return heartRate;
-    }
-
-    public void setHeartRate(int heartRate) {
-        this.heartRate = heartRate;
     }
 }
