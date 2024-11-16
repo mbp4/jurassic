@@ -19,9 +19,11 @@ Este proyecto es una aplicación desarrollada con Spring Boot y WebFlux, diseña
 **a. Movimiento**: 
  - Rastrea la ubicación y alimentación de los dinosaurios en tiempo real.
  - **Alertas de Seguridad**: Detecta y notifica cuando herbívoros y carnívoros se encuentran en la misma ubicación, utilizando programación reactiva con **Project Reactor**.
+   
 **b. Frecuencia Cardiaca**:
  - Monitorea el ritmo cardíaco de los dinosaurios.
  - Genera alarmas si el ritmo está fuera del rango seguro.
+   
 **c. Temperatura**:
  - Verifica que los dinosaurios estén dentro de su rango ideal de temperatura.
  - Genera alertas si las condiciones ambientales son extremas.
