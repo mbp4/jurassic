@@ -52,4 +52,9 @@ public class Aspectos {
         }
     }
 
+    @After("execution(* org.example.jurassic.controller.OperacionesController.terminar())")
+    public void borrarDatos(){
+        auditoriaDao.deleteAll(); //borramos todas las auditorias cuando se termine el dia
+    }
+
 }
