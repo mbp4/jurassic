@@ -63,8 +63,8 @@ Este proyecto es una aplicación desarrollada con Spring Boot y WebFlux, diseña
 
 ### Plantillas HTML
 - **`listado.html`**: Muestra una lista de dinosaurios agrupados por islas.
-- **`prohibido.html`**: Página de error 403 para usuarios sin permiso.
-- **`auditoria.html`**: Lista eventos de auditoría registrados.
+- **`prohibido.html`**: Restringe el acceso a los usuarios que no tengan permiso.
+- **`auditoria.html`**: Muestra una plantilla con los registros de auditoría.
 - **`nacer.html`**: Interfaz para agregar nuevos dinosaurios.
 
 ### Dependencias clave
