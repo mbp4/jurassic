@@ -32,15 +32,16 @@ public class OperacionesServicio {
             sensorCardiaco.monitorearRangoCardiaco(dinosaurio);
             double temperaturaActual = obtenerTemperaturaActual();
             sensorTemperatura.monitorearTemperatura(dinosaurio, temperaturaActual);
+        }
         if (listado.isEmpty()){
             generarDinosaurios();
         }
         return listado;
     }
 
-    private double obtenerTemperaturaActual() {
-        return 20.0; //Ejmeplo de temperatura actual
-    }
+        private double obtenerTemperaturaActual() {
+            return 20.0; //Ejmeplo de temperatura actual
+        }
 
     public List<Isla> listadoIslas() {
         List<Isla> listado = islaDao.findAll();
