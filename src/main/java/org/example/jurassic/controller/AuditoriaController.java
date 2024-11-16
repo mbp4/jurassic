@@ -21,7 +21,12 @@ public class AuditoriaController {
     public String list(Model model) {
         List<Auditoria> auditorias = auditoriaDao.findAll();
         model.addAttribute("auditorias", auditorias);
-        return "listaAuditoria";
+        return "auditoria";
+    }
+
+    @GetMapping("/volver")
+    public String volver(){
+        return "redirect:/principal/list";
     }
 
 }
