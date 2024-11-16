@@ -20,7 +20,7 @@ public class Isla implements Serializable{
     @Column(nullable = false)
     private String nombre;
 
-    @OneToMany(mappedBy = "isla", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "nombre", cascade = CascadeType.ALL)
     private List<Dinosaurio> listado;
 
     public long getId() {
